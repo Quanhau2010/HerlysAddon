@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HerlysAddon — Meteor Client Addon miễn phí cho Minecraft 1.21.11</title>
+<meta name="description" content="HerlysAddon — addon Meteor Client miễn phí cho Minecraft 1.21.11: hơn 110 module kinh tế, PvP, ESP, HUD tuỳ biến, lệnh chat. Tải bản mới nhất tại dsc.gg/herlysaddon. Phát triển bởi DragonHerlys và Tr0ngX." />
+<meta name="theme-color" content="#0b0713" />
+<meta property="og:title" content="HerlysAddon — Meteor Client Addon miễn phí" />
+<meta property="og:description" content="Hơn 110 module kinh tế, PvP và ESP cho Minecraft 1.21.11. Miễn phí, tải tại dsc.gg/herlysaddon. Bởi DragonHerlys và Tr0ngX." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/logo.png" />
+<link rel="icon" href="assets/logo.png" type="image/png" />
+<link rel="stylesheet" href="css/styles.css" />
+<noscript>
+  <style>
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .module-grid, .explorer-more { display: none !important; }
+  </style>
+</noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+<div class="backdrop" aria-hidden="true">
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
+  <div class="grid-fade"></div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="HerlysAddon — về đầu trang">
+      <img src="assets/logo.png" alt="" width="40" height="40" class="brand-logo" />
+      <span class="brand-text">
+        <strong>HerlysAddon</strong>
+        <small>DragonHerlys · Tr0ngX</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="primaryNav" aria-label="Điều hướng chính">
+      <a href="#features">Tính năng</a>
+      <a href="#modules">Modules</a>
+      <a href="#commands">Lệnh</a>
+      <a href="#install">Cài đặt</a>
+      <a href="#protection">Bảo vệ</a>
+      <a href="#team">Đội ngũ</a>
+      <a href="#changelog">Changelog</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Đổi giao diện sáng/tối" aria-pressed="false" title="Đổi giao diện">
+        <svg class="ico ico-sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+        <svg class="ico ico-moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+      </button>
+      <a class="btn btn-primary btn-sm hide-sm" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">
+        <svg class="ico" aria-hidden="true"><use href="#i-download"></use></svg>
+        Tải miễn phí
+      </a>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="ico" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="dot" aria-hidden="true"></span>
+          Miễn phí 100% · Fabric · Meteor · MC 1.21.11 · Java 21
+        </p>
+        <h1>
+          Bộ addon <span class="grad">kinh tế</span>,
+          <span class="grad-2">PvP</span> và
+          <span class="grad">ESP</span> cho Meteor.
+        </h1>
+        <p class="lede">
+          HerlysAddon gom hơn 110 module thực dụng — farm kinh tế, combat, phát hiện base,
+          HUD và chat cross-server — chạy ổn định trên Fabric. Addon <strong>hoàn toàn miễn phí</strong>,
+          phát hành bởi DragonHerlys và Tr0ngX; bản mới nhất luôn có tại
+          <a class="inline-link" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">dsc.gg/herlysaddon</a>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">
+            <svg class="ico" aria-hidden="true"><use href="#i-download"></use></svg>
+            Tải miễn phí trên Discord
+          </a>
+          <button class="btn btn-ghost" type="button" data-open-download>
+            Thông tin bản build
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </button>
+        </div>
+
+        <dl class="hero-stats">
+          <div>
+            <dt>Module</dt>
+            <dd><span data-count="110">0</span><span class="plus">+</span></dd>
+          </div>
+          <div>
+            <dt>Danh mục</dt>
+            <dd>3</dd>
+          </div>
+          <div>
+            <dt>Lệnh chat</dt>
+            <dd>5</dd>
+          </div>
+          <div>
+            <dt>Bản mod</dt>
+            <dd>1.9.5</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero-visual">
+        <div class="gui-card" aria-label="Mô phỏng bảng điều khiển module HerlysAddon">
+          <div class="gui-bar">
+            <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="gui-title">HerlysAddon <em>· ClickGUI</em></span>
+            <span class="gui-badge">v1.9.5</span>
+          </div>
+
+          <div class="gui-tabs" role="tablist" aria-label="Danh mục module">
+            <button class="gui-tab is-active" type="button" role="tab" aria-selected="true">Kinh tế</button>
+            <button class="gui-tab" type="button" role="tab" aria-selected="false">PvP</button>
+            <button class="gui-tab" type="button" role="tab" aria-selected="false">ESP</button>
+          </div>
+
+          <ul class="gui-list">
+            <li>
+              <span class="gui-ico eco" aria-hidden="true"><svg class="ico"><use href="#i-coins"></use></svg></span>
+              <span class="gui-name">Auto Blaze Rod Loop<small>vòng lặp mua · nấu · bán</small></span>
+              <label class="switch">
+                <input type="checkbox" checked aria-label="Bật Auto Blaze Rod Loop" />
+                <span class="track" aria-hidden="true"></span>
+              </label>
+            </li>
+            <li>
+              <span class="gui-ico pvp" aria-hidden="true"><svg class="ico"><use href="#i-sword"></use></svg></span>
+              <span class="gui-name">Auto Totem<small>swap offhand trong input sạch</small></span>
+              <label class="switch">
+                <input type="checkbox" checked aria-label="Bật Auto Totem" />
+                <span class="track" aria-hidden="true"></span>
+              </label>
+            </li>
+            <li>
+              <span class="gui-ico esp" aria-hidden="true"><svg class="ico"><use href="#i-eye"></use></svg></span>
+              <span class="gui-name">Sus Chunk Finder<small>đánh dấu chunk đáng ngờ</small></span>
+              <label class="switch">
+                <input type="checkbox" aria-label="Bật Sus Chunk Finder" />
+                <span class="track" aria-hidden="true"></span>
+              </label>
+            </li>
+            <li>
+              <span class="gui-ico eco" aria-hidden="true"><svg class="ico"><use href="#i-box"></use></svg></span>
+              <span class="gui-name">Shulker Tooltip<small>xem nội dung shulker</small></span>
+              <label class="switch">
+                <input type="checkbox" checked aria-label="Bật Shulker Tooltip" />
+                <span class="track" aria-hidden="true"></span>
+              </label>
+            </li>
+          </ul>
+
+          <div class="gui-foot">
+            <span><i class="pulse" aria-hidden="true"></i> 3 danh mục đã đăng ký</span>
+            <span class="mono">Modules: 110</span>
+          </div>
+        </div>
+
+        <div class="float-chip chip-a">
+          <svg class="ico" aria-hidden="true"><use href="#i-shield"></use></svg>
+          Integrity check
+        </div>
+        <div class="float-chip chip-b">
+          <svg class="ico" aria-hidden="true"><use href="#i-cpu"></use></svg>
+          VM bytecode
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="strip" aria-label="Điểm nổi bật">
+        <span>Meteor Client</span>
+        <span>Fabric 0.18</span>
+        <span>Minecraft 1.21.11</span>
+        <span>Baritone 1.15</span>
+        <span>Java 21</span>
+        <span>Miễn phí · phát hành qua Discord</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Tổng quan</p>
+        <h2>Một addon, ba trụ cột vận hành</h2>
+        <p class="section-sub">
+          Mọi module dùng chung hệ thống setting, keybind và HUD của Meteor — cài một lần,
+          bật tắt trong ClickGUI quen thuộc.
+        </p>
+      </header>
+
+      <div class="feature-grid">
+        <article class="card feature-card reveal">
+          <span class="feature-ico eco"><svg class="ico" aria-hidden="true"><use href="#i-coins"></use></svg></span>
+          <h3>Kinh tế &amp; tự động hoá</h3>
+          <p>Vòng lặp mua – craft – bán, order, reclaim, shop và RTP. Cấu hình một lần, chạy nền ổn định.</p>
+          <ul class="mini-list">
+            <li>AutoBlazeRodLoop · AutoCraft · AutoSell</li>
+            <li>OrderDropper · AutoReclaim · AutoBuyShop</li>
+          </ul>
+        </article>
+
+        <article class="card feature-card reveal">
+          <span class="feature-ico pvp"><svg class="ico" aria-hidden="true"><use href="#i-sword"></use></svg></span>
+          <h3>PvP &amp; combo</h3>
+          <p>Aura, anchor, crystal, mace, strafe và totem — ưu tiên timing thật thay vì spam packet.</p>
+          <ul class="mini-list">
+            <li>AutoTotem · CrystalAura++ · AnchorAura++</li>
+            <li>Surround · Scaffold++ · TargetStrafe</li>
+          </ul>
+        </article>
+
+        <article class="card feature-card reveal">
+          <span class="feature-ico esp"><svg class="ico" aria-hidden="true"><use href="#i-eye"></use></svg></span>
+          <h3>ESP &amp; dò tìm</h3>
+          <p>Phát hiện player, mob, spawner, hole bedrock, chunk đáng ngờ và mạch netherite.</p>
+          <ul class="mini-list">
+            <li>PlayerESP · MobESP · SpawnerESP</li>
+            <li>ChunkFinder · BaseFinder · NetheriteFinder</li>
+          </ul>
+        </article>
+
+        <article class="card feature-card reveal">
+          <span class="feature-ico hud"><svg class="ico" aria-hidden="true"><use href="#i-layers"></use></svg></span>
+          <h3>HUD &amp; giao diện</h3>
+          <p>Keystroke, armor, totem, potion, crosshair và tooltip — tuỳ biến vị trí, màu, thứ tự.</p>
+          <ul class="mini-list">
+            <li>Keystroke · ArmorHud · TotemCounter</li>
+            <li>ShulkerTooltip · MapTooltip · BundlePreview</li>
+          </ul>
+        </article>
+
+        <article class="card feature-card reveal">
+          <span class="feature-ico chat"><svg class="ico" aria-hidden="true"><use href="#i-chat"></use></svg></span>
+          <h3>Chat &amp; AI</h3>
+          <p>Chat chung cross-server chạy nền, lệnh <code>.chat</code> và trợ lý <code>.ai</code> ngay trong game.</p>
+          <ul class="mini-list">
+            <li>HerlysChat · MsgAll · ChatColor</li>
+            <li>AI proxy riêng · knowledge base nội bộ</li>
+          </ul>
+        </article>
+
+        <article class="card feature-card reveal">
+          <span class="feature-ico safe"><svg class="ico" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+          <h3>Bảo vệ mã nguồn</h3>
+          <p>Payload shard mã hoá, VM bytecode, kiểm tra toàn vẹn và guard chống dump/agent —
+          để công cụ decompile và AI không đọc được logic, không phải để bán.</p>
+          <ul class="mini-list">
+            <li>AES-256-GCM envelope · FNV-1a/64</li>
+            <li>Sealed loader mode · agent watch</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES -->
+  <section class="section" id="modules">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Module explorer</p>
+        <h2>Tìm đúng module trong vài giây</h2>
+        <p class="section-sub">
+          Lọc theo danh mục hoặc gõ tên. Danh sách dưới đây lấy từ registry thực tế của addon.
+        </p>
+      </header>
+
+      <div class="explorer reveal">
+        <div class="explorer-toolbar">
+          <div class="search-field">
+            <svg class="ico" aria-hidden="true"><use href="#i-search"></use></svg>
+            <input id="moduleSearch" type="search" placeholder="Tìm module, ví dụ: totem, esp, auto…" aria-label="Tìm module" autocomplete="off" spellcheck="false" />
+            <kbd class="hide-sm">/</kbd>
+          </div>
+
+          <div class="chips" role="group" aria-label="Lọc theo danh mục">
+            <button class="chip is-active" type="button" data-filter="all">Tất cả <span data-count-for="all">0</span></button>
+            <button class="chip" type="button" data-filter="eco">Kinh tế <span data-count-for="eco">0</span></button>
+            <button class="chip" type="button" data-filter="pvp">PvP <span data-count-for="pvp">0</span></button>
+            <button class="chip" type="button" data-filter="esp">ESP <span data-count-for="esp">0</span></button>
+          </div>
+        </div>
+
+        <div class="explorer-meta">
+          <p id="moduleStatus" aria-live="polite">Đang tải danh sách…</p>
+          <button class="link-btn" id="moduleReset" type="button">Xoá bộ lọc</button>
+        </div>
+
+        <div class="module-grid" id="moduleGrid"></div>
+
+        <noscript>
+          <p class="empty-state">Bật JavaScript để duyệt danh sách 110 module với tìm kiếm và bộ lọc.</p>
+        </noscript>
+
+        <p class="empty-state" id="moduleEmpty" hidden>
+          Không tìm thấy module khớp. Thử từ khoá ngắn hơn?
+        </p>
+
+        <div class="explorer-more">
+          <button class="btn btn-ghost" id="moduleMore" type="button">Xem thêm</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMANDS -->
+  <section class="section" id="commands">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Trong game</p>
+        <h2>Năm lệnh chat, không cần mở GUI</h2>
+        <p class="section-sub">Gõ trực tiếp vào chat. Mọi lệnh đều có tab-complete và thông báo lỗi rõ ràng.</p>
+      </header>
+
+      <div class="command-grid">
+        <article class="card command-card reveal">
+          <header>
+            <code>.ai</code>
+            <button class="icon-btn copy-btn" type="button" data-copy=".ai " aria-label="Sao chép lệnh .ai">
+              <svg class="ico" aria-hidden="true"><use href="#i-copy"></use></svg>
+            </button>
+          </header>
+          <p>Hỏi trợ lý AI tích hợp về module, cách cấu hình hoặc mẹo chơi.</p>
+          <pre class="code-line">.ai cách set up auto totem?</pre>
+        </article>
+
+        <article class="card command-card reveal">
+          <header>
+            <code>.chat</code>
+            <button class="icon-btn copy-btn" type="button" data-copy=".chat " aria-label="Sao chép lệnh .chat">
+              <svg class="ico" aria-hidden="true"><use href="#i-copy"></use></svg>
+            </button>
+          </header>
+          <p>Gửi tin nhắn lên kênh chat chung cross-server của Herlys.</p>
+          <pre class="code-line">.chat ai mua blaze rod không?</pre>
+        </article>
+
+        <article class="card command-card reveal">
+          <header>
+            <code>.nickname</code>
+            <button class="icon-btn copy-btn" type="button" data-copy=".nickname " aria-label="Sao chép lệnh .nickname">
+              <svg class="ico" aria-hidden="true"><use href="#i-copy"></use></svg>
+            </button>
+          </header>
+          <p>Đổi nickname hiển thị phía client, không ảnh hưởng tài khoản.</p>
+          <pre class="code-line">.nickname DragonHerlys</pre>
+        </article>
+
+        <article class="card command-card reveal">
+          <header>
+            <code>.tatchat</code>
+            <button class="icon-btn copy-btn" type="button" data-copy=".tatchat" aria-label="Sao chép lệnh .tatchat">
+              <svg class="ico" aria-hidden="true"><use href="#i-copy"></use></svg>
+            </button>
+          </header>
+          <p>Bật/tắt hiển thị chat chung trong cửa sổ chat hiện tại.</p>
+          <pre class="code-line">.tatchat</pre>
+        </article>
+
+        <article class="card command-card reveal">
+          <header>
+            <code>.msgall-reset</code>
+            <button class="icon-btn copy-btn" type="button" data-copy=".msgall-reset" aria-label="Sao chép lệnh .msgall-reset">
+              <svg class="ico" aria-hidden="true"><use href="#i-copy"></use></svg>
+            </button>
+          </header>
+          <p>Reset bộ đếm và danh sách người đã nhận của module MsgAll.</p>
+          <pre class="code-line">.msgall-reset</pre>
+        </article>
+
+        <article class="card command-card command-note reveal">
+          <header>
+            <span class="badge"><svg class="ico" aria-hidden="true"><use href="#i-zap"></use></svg> Mẹo</span>
+          </header>
+          <p>
+            Đặt keybind cho module trong ClickGUI để bật/tắt tức thì. Phím <kbd>/</kbd> trên
+            trang này đưa bạn thẳng tới ô tìm module.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALL -->
+  <section class="section" id="install">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Bắt đầu</p>
+        <h2>Cài đặt trong bốn bước</h2>
+        <p class="section-sub">
+          Cần Minecraft 1.21.11, Fabric Loader, Fabric API, Meteor Client và JDK 21 khi chạy game.
+        </p>
+      </header>
+
+      <div class="install-grid">
+        <div class="card requirements reveal">
+          <h3>Yêu cầu hệ thống</h3>
+          <ul class="check-list">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg> Minecraft <strong>1.21.11</strong></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg> Fabric Loader <strong>0.18.x</strong></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg> Fabric API</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg> Meteor Client <span class="mono">SNAPSHOT</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg> Baritone <strong>1.15.0</strong> <small>(cài rời)</small></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg> Java <strong>21</strong> trở lên</li>
+          </ul>
+          <p class="note">
+            Baritone không được bundle trong jar. Tải <code>baritone-fabric-1.15.0.jar</code>
+            và đặt cạnh mod chính.
+          </p>
+        </div>
+
+        <div class="card install-steps reveal">
+          <div class="tabs" role="tablist" aria-label="Cách cài đặt">
+            <button class="tab is-active" type="button" role="tab" aria-selected="true" data-install-tab="client">Cài vào client</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-install-tab="source">Build từ source</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-install-tab="server">Server đi kèm</button>
+          </div>
+
+          <div class="tab-panel is-active" data-install-panel="client">
+            <ol class="steps">
+              <li>
+                <div>
+                  <h4>Tải bản mới nhất tại <a class="inline-link" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">dsc.gg/herlysaddon</a></h4>
+                  <p>Vào server Discord chính thức, mở kênh tải xuống và lấy đúng file cho nền tảng của bạn. Miễn phí, không cần license.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4>Đóng game hoàn toàn</h4>
+                  <p>Không chép đè jar khi Minecraft đang chạy — hash check sẽ fail-closed.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4>Mở thư mục <code>mods</code> của instance</h4>
+                  <p>Đặt <code>HerlysAddon-1.21.11.jar</code> cạnh <code>meteor-client</code> và Baritone.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4>Khởi động game</h4>
+                  <p>Vào Meteor → Modules, kiểm tra ba nhóm <span class="mono">HERLYSADDON</span>, <span class="mono">HERLYS_PVP</span>, <span class="mono">HERLYS_ESP</span>.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4>Bật module và gán keybind</h4>
+                  <p>Chuột phải trong ClickGUI để mở setting, chỉnh theo nhu cầu.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="tab-panel" data-install-panel="source" hidden>
+            <ol class="steps">
+              <li>
+                <div>
+                  <h4>Chuẩn bị JDK 21</h4>
+                  <p>Biến <code>JAVA_HOME</code> phải trỏ tới JDK 21. Toolchain build dùng Gradle wrapper của repo.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4>Clone source và build</h4>
+                  <pre class="code-block"><code>git clone &lt;repo&gt; HerlysAddon
+cd HerlysAddon
+build.cmd          # Windows: release
+./gradlew build    # hoặc Gradle trực tiếp</code></pre>
+                  <button class="copy-block" type="button" data-copy="git clone &lt;repo&gt; HerlysAddon&#10;cd HerlysAddon&#10;build.cmd">Sao chép</button>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4>Chạy gate kiểm thử</h4>
+                  <pre class="code-block"><code>powershell -NoProfile -ExecutionPolicy Bypass -File .\vmcheck.ps1</code></pre>
+                  <p>Exit code 0 = interpreter VM và pipeline test đều xanh. Vi phạm thì không deploy.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4>Lấy jar thành phẩm</h4>
+                  <p>File nằm ở <code>build/libs/HerlysAddon-1.21.11.jar</code>. Bản <code>-dev.jar</code> là intermediate, không phát hành.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="tab-panel" data-install-panel="server" hidden>
+            <ol class="steps">
+              <li>
+                <div>
+                  <h4><code>herlys-config.php</code></h4>
+                  <p>Endpoint cấu hình tập trung: mod fetch endpoint và key lúc chạy, cache 6 giờ — xoay key không cần rebuild.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4><code>ai/gpt-oss-120b.php</code></h4>
+                  <p>Proxy AI cho lệnh <code>.ai</code>. Cần API key Groq cấu hình phía server.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4><code>herlyschat/</code></h4>
+                  <p>Chat chung cross-server, lưu bằng JSON, không cần database.</p>
+                </div>
+              </li>
+            </ol>
+            <p class="note">Chi tiết triển khai xem <code>server/README_DEPLOY.md</code> trong repo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-note reveal">
+        <p>
+          <strong>Windows</strong> nhận bản đầy đủ (payload + native host + guard).
+          <strong>macOS</strong> hiện là jar-only, chạy ở chế độ degraded cho tới khi native host cho mac phát hành.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTECTION -->
+  <section class="section" id="protection">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Kiến trúc</p>
+        <h2>Bảo vệ bản phát hành, không phải trang trí</h2>
+        <p class="section-sub">
+          Bản release đi qua pipeline obfuscation nhiều lớp: string vault, envelope mã hoá,
+          VM bytecode, kiểm tra toàn vẹn và guard chống phân tích. Tất cả nhằm giữ logic khỏi
+          công cụ dịch ngược tự động — người dùng vẫn tải và dùng <strong>miễn phí</strong>.
+        </p>
+      </header>
+
+      <div class="stats-band reveal">
+        <div><strong>7</strong><span>lớp obfuscation</span></div>
+        <div><strong>2.7k+</strong><span>method virtualized</span></div>
+        <div><strong>AES-256</strong><span>GCM per shard</span></div>
+        <div><strong>0</strong><span>string plaintext trong shard</span></div>
+      </div>
+
+      <div class="protect-grid">
+        <article class="card protect-card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-lock"></use></svg>
+          <h3>String vault</h3>
+          <p>Toàn bộ chuỗi và concat được đưa vào payload shard, callsite chỉ còn cặp int. Key gắn với build và DLL.</p>
+        </article>
+        <article class="card protect-card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-shield"></use></svg>
+          <h3>Envelope HERLYSE2</h3>
+          <p>Mỗi shard bọc AES-256-GCM với nonce riêng, AAD gồm DLL FNV và index — shard bị đổi chỗ chết ngay tại tag.</p>
+        </article>
+        <article class="card protect-card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-cpu"></use></svg>
+          <h3>VM bytecode</h3>
+          <p>Method được dịch sang chương trình của interpreter riêng, chia thành nhiều piece, chỉ cài khi đủ toàn bộ.</p>
+        </article>
+        <article class="card protect-card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-eye"></use></svg>
+          <h3>Anti-tamper</h3>
+          <p>Kiểm tra FNV-1a/64 mỗi lần load, marker set và guard watchdog chạy nền; lệch hash là dừng an toàn.</p>
+        </article>
+        <article class="card protect-card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-layers"></use></svg>
+          <h3>Split loader</h3>
+          <p>Chế độ sealed giữ implementation trong DLL overlay; jar chỉ khai báo roster, loader định nghĩa class lúc runtime.</p>
+        </article>
+        <article class="card protect-card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-terminal"></use></svg>
+          <h3>Agent watch</h3>
+          <p>Phát hiện JDWP, attach listener, tool dump và java agent lạ trước khi payload được định nghĩa.</p>
+        </article>
+      </div>
+
+      <p class="protect-foot reveal">
+        HerlysAddon được phát hành <strong>miễn phí</strong> cho cộng đồng. Các lớp bảo vệ ở trên
+        không phải paywall — chúng giữ logic khỏi công cụ dịch ngược tự động và các bản re-upload
+        chỉnh sửa. Bản chính thức luôn nằm ở <strong>dsc.gg/herlysaddon</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" id="team">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Đội ngũ</p>
+        <h2>Được phát triển bởi DragonHerlys và Tr0ngX</h2>
+        <p class="section-sub">
+          Addon ra đời từ một dự án cá nhân rồi mở cho cộng đồng dùng miễn phí. Hai tác giả
+          cùng duy trì module, bản build và kênh hỗ trợ Discord.
+        </p>
+      </header>
+
+      <div class="team-grid">
+        <article class="card team-card reveal">
+          <span class="avatar" aria-hidden="true">DH</span>
+          <div class="team-body">
+            <h3>DragonHerlys</h3>
+            <p class="role">Tác giả · chủ dự án</p>
+            <p>
+              Người khởi xướng HerlysAddon: thiết kế hệ module, pipeline build nhiều lớp,
+              native host và cơ chế bảo vệ bản phát hành.
+            </p>
+            <ul class="team-tags">
+              <li>Java · ASM</li>
+              <li>Gradle</li>
+              <li>C++ / JNI</li>
+              <li>Rust loader</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card team-card reveal">
+          <span class="avatar alt" aria-hidden="true">T7</span>
+          <div class="team-body">
+            <h3>Tr0ngX</h3>
+            <p class="role">Đồng phát triển</p>
+            <p>
+              Cùng phát triển và kiểm thử module, game mode và các bản cập nhật được phát hành
+              trên Discord.
+            </p>
+            <ul class="team-tags">
+              <li>Module · PvP</li>
+              <li>Game mode</li>
+              <li>Testing</li>
+              <li>Support</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="team-callout reveal">
+        <div>
+          <h3>Tải bản mới nhất tại dsc.gg/herlysaddon</h3>
+          <p>Kênh phát hành duy nhất, miễn phí. Vào Discord để nhận file, báo lỗi và theo dõi cập nhật.</p>
+        </div>
+        <a class="btn btn-primary" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">
+          <svg class="ico" aria-hidden="true"><use href="#i-chat"></use></svg>
+          Mở Discord
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANGELOG -->
+  <section class="section" id="changelog">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Lịch sử</p>
+        <h2>Những gì đã thay đổi</h2>
+        <p class="section-sub">Tóm tắt các mốc lớn; chi tiết kỹ thuật nằm trong <code>progress.md</code> của repo.</p>
+      </header>
+
+      <ol class="timeline">
+        <li class="reveal">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-card card">
+            <header><span class="version">1.9.5</span><time>Bản hiện tại</time></header>
+            <ul>
+              <li>Phát hành <strong>miễn phí</strong> cho cộng đồng; kênh tải chính thức: <code>dsc.gg/herlysaddon</code>.</li>
+              <li>Ổn định boot cho jar-only: native host tự load lại và báo lỗi rõ ràng hơn.</li>
+              <li>Đồng bộ pipeline build hai nền tảng, tách cấu hình win/mac.</li>
+              <li>Dọn dẹp chẩn đoán guard, giảm log nhiễu khi khởi động.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-card card">
+            <header><span class="version">1.9.0</span><time>VM &amp; payload</time></header>
+            <ul>
+              <li>Blob VM chuyển sang piece envelope v7 — mỗi piece có salt và MAC riêng.</li>
+              <li>Thêm opcode float/double, giảm mạnh nhóm method bị từ chối virtualize.</li>
+              <li>Vault callsite đa dạng hình dạng, giảm tương quan giữa class thật và decoy.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-card card">
+            <header><span class="version">1.8.0</span><time>Combat &amp; kinh tế</time></header>
+            <ul>
+              <li>AutoShop và AutoTotem viết lại theo engine cửa sổ input sạch.</li>
+              <li>Hotbar Refill dùng chung arbiter với AutoTotem, hết tranh chấp cửa sổ.</li>
+              <li>Bổ sung AutoMine, EasyPlace, Scaffold++ và AntiPhase++.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-card card">
+            <header><span class="version">1.7.0</span><time>Nền tảng</time></header>
+            <ul>
+              <li>Chuyển sang Minecraft 1.21.11, Java 21, Meteor snapshot.</li>
+              <li>Hợp nhất pipeline obfuscation trong một lượt build.</li>
+              <li>Thêm chat cross-server và proxy AI cho lệnh <code>.ai</code>.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container narrow">
+      <header class="section-head reveal">
+        <p class="kicker">Hỏi đáp</p>
+        <h2>Câu hỏi thường gặp</h2>
+      </header>
+
+      <div class="faq reveal">
+        <details>
+          <summary>HerlysAddon có miễn phí không?</summary>
+          <p>Có — hoàn toàn miễn phí. Không có paywall, không cần license hay key. Bạn chỉ cần vào Discord chính thức và tải file về. Một số ghi chú cũ ghi "trả phí" là để hạn chế công cụ và AI tự động dịch ngược, không phải điều kiện sử dụng.</p>
+        </details>
+        <details>
+          <summary>Tải bản mới nhất ở đâu?</summary>
+          <p>Tại <a class="inline-link" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">dsc.gg/herlysaddon</a> — kênh phát hành chính thức duy nhất. Trong server có kênh tải xuống riêng cho Windows và macOS. Không tải từ nguồn lạ để tránh bản bị chỉnh sửa.</p>
+        </details>
+        <details>
+          <summary>Ai phát triển addon này?</summary>
+          <p>HerlysAddon được phát triển bởi <strong>DragonHerlys</strong> và <strong>Tr0ngX</strong>, phát hành miễn phí cho cộng đồng Meteor.</p>
+        </details>
+        <details>
+          <summary>Cần những mod gì để chạy?</summary>
+          <p>Minecraft 1.21.11, Fabric Loader, Fabric API, Meteor Client bản snapshot và Baritone 1.15.0 đặt trong thư mục <code>mods</code>. Java 21 là bắt buộc.</p>
+        </details>
+        <details>
+          <summary>Vì sao Baritone không nằm trong jar?</summary>
+          <p>Baritone được khai báo <code>modCompileOnly</code> / <code>modRuntimeOnly</code> để tránh bundle trùng phiên bản. Bạn tự đặt file jar vào <code>mods</code>.</p>
+        </details>
+        <details>
+          <summary>Bản macOS khác gì bản Windows?</summary>
+          <p>Bản Windows có native host và guard đầy đủ. Bản macOS hiện chỉ là jar, chạy degraded cho tới khi native host cho mac được phát hành.</p>
+        </details>
+        <details>
+          <summary>Build báo <code>remapJar UP-TO-DATE</code> nhưng jar vẫn cũ?</summary>
+          <p>Xoá <code>build/libs/HerlysAddon-*.jar</code> rồi build lại. Gradle giữ jar cũ nếu task bị coi là up-to-date.</p>
+        </details>
+        <details>
+          <summary>Addon có né được mọi anti-cheat không?</summary>
+          <p>Không có cam kết đó. Nhiều module phụ thuộc cấu hình server và có thể bị phát hiện. Hãy đọc kỹ mô tả từng module trước khi dùng.</p>
+        </details>
+        <details>
+          <summary>Vì sao có nhiều lớp obfuscation nếu addon miễn phí?</summary>
+          <p>Mục tiêu là chống dịch ngược tự động: string vault, envelope mã hoá, VM bytecode, kiểm tra toàn vẹn và guard chống dump khiến decompiler và công cụ AI khó đọc logic. Người dùng cuối không phải trả gì và không phải xin key.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta reveal">
+        <img src="assets/logo.png" alt="" width="56" height="56" />
+        <h2>Tải HerlysAddon miễn phí</h2>
+        <p>Bản mới nhất: 1.9.5 · Minecraft 1.21.11</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">
+            <svg class="ico" aria-hidden="true"><use href="#i-download"></use></svg>
+            Tải miễn phí trên Discord
+          </a>
+          <a class="btn btn-ghost" href="#install">Xem hướng dẫn cài</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="#top">
+        <img src="assets/logo.png" alt="" width="36" height="36" class="brand-logo" />
+        <span class="brand-text"><strong>HerlysAddon</strong><small>DragonHerlys · Tr0ngX</small></span>
+      </a>
+      <p class="footer-note">
+        Addon Meteor Client cho Minecraft 1.21.11. Miễn phí cho cộng đồng —
+        bản mới nhất tại dsc.gg/herlysaddon.
+      </p>
+    </div>
+    <div>
+      <h3>Sản phẩm</h3>
+      <ul class="footer-links">
+        <li><a href="#features">Tính năng</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#commands">Lệnh chat</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Hỗ trợ</h3>
+      <ul class="footer-links">
+        <li><a href="#install">Cài đặt</a></li>
+        <li><a href="#protection">Bảo vệ</a></li>
+        <li><a href="#team">Đội ngũ</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">Discord · tải addon</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Trạng thái</h3>
+      <ul class="footer-links">
+        <li><span class="status-dot" aria-hidden="true"></span> Phiên bản 1.9.5</li>
+        <li>MC 1.21.11 · Java 21</li>
+        <li>Windows · macOS (jar-only)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span id="year">2026</span> DragonHerlys &amp; Tr0ngX · phát hành miễn phí cho cộng đồng.</p>
+    <p class="mono">Made for Meteor Client · Fabric</p>
+  </div>
+</footer>
+
+<!-- DOWNLOAD MODAL -->
+<div class="modal" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="downloadTitle" hidden>
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel" role="document">
+    <button class="icon-btn modal-close" type="button" data-close-modal aria-label="Đóng">
+      <svg class="ico" aria-hidden="true"><use href="#i-x"></use></svg>
+    </button>
+
+    <header class="modal-head">
+      <img src="assets/logo.png" alt="" width="44" height="44" />
+      <div>
+        <h2 id="downloadTitle">Tải HerlysAddon miễn phí</h2>
+        <p>Bản 1.9.5 · Minecraft 1.21.11 · không cần license</p>
+      </div>
+    </header>
+
+    <div class="modal-body">
+      <div class="segmented" role="group" aria-label="Chọn nền tảng">
+        <button class="seg is-active" type="button" data-platform="win">Windows</button>
+        <button class="seg" type="button" data-platform="mac">macOS</button>
+      </div>
+
+      <div class="file-card">
+        <div class="file-icon"><svg class="ico" aria-hidden="true"><use href="#i-box"></use></svg></div>
+        <div class="file-meta">
+          <strong data-file-name>HerlysAddon-1.21.11.jar</strong>
+          <span data-file-desc>Bản đầy đủ: payload, native host và guard.</span>
+        </div>
+        <span class="file-tag" data-file-tag>Full</span>
+      </div>
+
+      <ol class="modal-steps">
+        <li>Mở <a class="inline-link" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">dsc.gg/herlysaddon</a> và vào server Discord chính thức.</li>
+        <li>Vào kênh tải xuống, chọn đúng file cho nền tảng của bạn (Windows hoặc macOS).</li>
+        <li>Đặt jar vào thư mục <code>mods</code> của instance, khởi động lại game rồi mở Meteor → Modules.</li>
+      </ol>
+
+      <p class="modal-note">
+        Miễn phí, không cần key hay license. Chỉ tải từ kênh chính thức — bản re-upload từ nguồn lạ
+        có thể đã bị chỉnh sửa và sẽ không qua kiểm tra toàn vẹn.
+      </p>
+
+      <div class="modal-actions">
+        <a class="btn btn-primary" href="https://dsc.gg/herlysaddon" target="_blank" rel="noopener noreferrer">
+          <svg class="ico" aria-hidden="true"><use href="#i-chat"></use></svg>
+          Mở Discord
+        </a>
+        <a class="btn btn-ghost" href="#install" data-close-modal>Xem hướng dẫn cài</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">
+  <svg class="ico" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<svg class="svg-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 17.5v1.2a1.8 1.8 0 0 0 1.8 1.8h11.4a1.8 1.8 0 0 0 1.8-1.8v-1.2"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h15"/><path d="m13.5 6 6 6-6 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.4"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3h-6A3.5 3.5 0 0 0 3 6.5v6A2.5 2.5 0 0 0 5.5 15"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.5 4.5L19.5 6.5"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5.5" ry="3"/><path d="M3.5 7v4c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3V7"/><path d="M3.5 11v4c0 1.7 2.5 3 5.5 3 1 0 2-.15 2.8-.4"/><ellipse cx="16.5" cy="14" rx="4" ry="2.6"/><path d="M12.5 14v4c0 1.4 1.8 2.6 4 2.6s4-1.2 4-2.6v-4"/></symbol>
+    <symbol id="i-sword" viewBox="0 0 24 24"><path d="M20.5 3.5 10 14"/><path d="m14 3.5 6.5 0 0 6.5"/><path d="m7 10 7 7"/><path d="m4 13 7 7"/><path d="m9.5 17.5 3.5 3.5"/><path d="m4 20 3-3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 4.8-9 4.8-9-4.8L12 3Z"/><path d="m3 12.5 9 4.8 9-4.8"/><path d="m3 17 9 4.8 9-4.8"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 12.5a7.5 7.5 0 0 1-7.5 7.5H8l-4 3V12.5A7.5 7.5 0 0 1 11.5 5h1.5a7.5 7.5 0 0 1 7.5 7.5Z"/><path d="M8.5 12h7M8.5 9h4.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5.5c0 4.6-3.3 7.9-8 9.5-4.7-1.6-8-4.9-8-9.5V6l8-3Z"/><path d="m8.7 12 2.2 2.2 4.4-4.6"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9.5 2.5v3.5M14.5 2.5v3.5M9.5 18v3.5M14.5 18v3.5M2.5 9.5H6M2.5 14.5H6M18 9.5h3.5M18 14.5h3.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.4"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><path d="M12 14.5v2.5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 8 4.4v9.2L12 21l-8-4.4V7.4L12 3Z"/><path d="m4 7.4 8 4.4 8-4.4M12 11.8V21"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.4"/><path d="m7 9.5 3 2.7-3 2.7M12.5 15h4.5"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V5"/><path d="m6 11 6-6 6 6"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13.5 2.5 5 13.5h5.5L9.5 21.5 19 10.5h-5.5l0-8Z"/></symbol>
+  </defs>
+</svg>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
